@@ -9,12 +9,11 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.myapplication.databinding.ActivityMainBinding
 
-const val TAG="TESTTEST"
+private const val TAG="TESTTEST"
 
 class MainActivity : AppCompatActivity() {
 
     private var binding:ActivityMainBinding?=null
-//    private var receiver=NetworkChangeReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "Отработал onCreate")
@@ -22,8 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
-//        val intentFilter=IntentFilter("androind.net.conn.CONNECTIVITY_CHANNEL")
-//        registerReceiver(receiver,intentFilter)
+        val intentBackground=Intent(this,MyBackgroundService::class.java)
 
         val intentForeground=Intent(this,MyForegroundService::class.java)
 
@@ -35,9 +33,14 @@ class MainActivity : AppCompatActivity() {
             it.btnForegroundStop.setOnClickListener {
                 stopService(intentForeground)
             }
+            it.btnBackgroundStart.setOnClickListener {
+               startService(intentBackground)
+            }
+            it.btnBackgroundStop.setOnClickListener {
+                stopService(intentBackground)
+            }
         }
     }
-
     override fun onDestroy() {
         super.onDestroy()
     }

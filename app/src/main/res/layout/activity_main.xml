@@ -39,4 +39,35 @@
             />
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/tv_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MyBackgroundService"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp">
+        <Button
+            android:id="@+id/btn_background_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Start"
+            android:textSize="20dp"
+            />
+        <Button
+            android:id="@+id/btn_background_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Stop"
+            android:textSize="20dp"
+            />
+    </RelativeLayout>
+
 </LinearLayout>
